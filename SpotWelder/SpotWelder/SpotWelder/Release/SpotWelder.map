@@ -7,7 +7,7 @@ c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-t
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
                               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm644.o (exit)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
-                              UIActions.o (__do_copy_data)
+                              SpotWelder.o (__do_copy_data)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
                               Drivers/TimerControl.o (__do_clear_bss)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(memset.o)
@@ -53,12 +53,8 @@ Discarded input sections
  .bss.Number    0x00000000        0x8 Drivers/VFDDrv.o
  .text          0x00000000        0x0 SpotWelder.o
  .bss           0x00000000        0x0 SpotWelder.o
- .progmem.data.FWAuthor
-                0x00000000        0xa SpotWelder.o
- .progmem.data.FWVerMsg
-                0x00000000        0xd SpotWelder.o
- .progmem.data.FWName
-                0x00000000       0x23 SpotWelder.o
+ .progmem.data.FWAuthorStr
+                0x00000000       0x11 SpotWelder.o
  .text          0x00000000        0x0 UIActions.o
  .bss           0x00000000        0x0 UIActions.o
  .text          0x00000000        0x0 UIControl.o
@@ -286,7 +282,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2e86
+.text           0x00000000     0x2e8a
  *(.vectors)
  .vectors       0x00000000       0x70 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm644.o
                 0x00000000                __vector_default
@@ -300,133 +296,135 @@ END GROUP
  *(.trampolines*)
                 0x00000070                __trampolines_end = .
  *(.progmem*)
+ .progmem.data.FWVerMsgStr
+                0x00000070       0x11 SpotWelder.o
+                0x00000070                FWVerMsgStr
+ .progmem.data.FWNameStr
+                0x00000081       0x11 SpotWelder.o
+                0x00000081                FWNameStr
  .progmem.data.__c.2612
-                0x00000070       0x11 UIActions.o
+                0x00000092       0x11 UIActions.o
  .progmem.data.__c.2607
-                0x00000081        0x3 UIActions.o
+                0x000000a3        0x3 UIActions.o
  .progmem.data.__c.2599
-                0x00000084       0x11 UIActions.o
- .progmem.data.__c.2597
-                0x00000095       0x11 UIActions.o
- .progmem.data.__c.2595
                 0x000000a6       0x11 UIActions.o
- .progmem.data.__c.2588
+ .progmem.data.__c.2597
                 0x000000b7       0x11 UIActions.o
+ .progmem.data.__c.2595
+                0x000000c8       0x11 UIActions.o
+ .progmem.data.__c.2588
+                0x000000d9       0x11 UIActions.o
  .progmem.data.__c.2586
-                0x000000c8        0x9 UIActions.o
+                0x000000ea        0x9 UIActions.o
  .progmem.data.__c.2584
-                0x000000d1       0x11 UIActions.o
- .progmem.data.__c.2582
-                0x000000e2       0x11 UIActions.o
- .progmem.data.__c.2580
                 0x000000f3       0x11 UIActions.o
- .progmem.data.__c.2578
-                0x00000104       0x11 UIActions.o
- .progmem.data.__c.2576
-                0x00000115       0x11 UIActions.o
- .progmem.data.__c.2569
-                0x00000126       0x11 UIActions.o
- .progmem.data.__c.2567
-                0x00000137       0x11 UIActions.o
- .progmem.data.__c.2560
-                0x00000148       0x11 UIActions.o
- .progmem.data.__c.2558
-                0x00000159       0x11 UIActions.o
- .progmem.data.__c.2556
-                0x0000016a        0xd UIActions.o
- .progmem.data.__c.2554
-                0x00000177       0x11 UIActions.o
- .progmem.data.__c.2552
-                0x00000188       0x11 UIActions.o
- .progmem.data.__c.2550
-                0x00000199       0x11 UIActions.o
- .progmem.data.__c.2542
-                0x000001aa        0x3 UIActions.o
- .progmem.data.__c.2534
-                0x000001ad        0x3 UIActions.o
- .progmem.data.__c.2526
-                0x000001b0        0x3 UIActions.o
- .progmem.data.__c.2518
-                0x000001b3        0x3 UIActions.o
- .progmem.data.__c.2500
-                0x000001b6       0x11 UIActions.o
- .progmem.data.__c.2496
-                0x000001c7       0x11 UIActions.o
- .progmem.data.__c.2490
-                0x000001d8       0x11 UIActions.o
- .progmem.data.__c.2484
-                0x000001e9       0x11 UIActions.o
- .progmem.data.__c.2482
-                0x000001fa       0x11 UIActions.o
- .progmem.data.__c.2463
-                0x0000020b        0xf UIActions.o
- .progmem.data.__c.2461
-                0x0000021a       0x11 UIActions.o
- .progmem.data.__c.2459
-                0x0000022b        0xf UIActions.o
- .progmem.data.__c.2457
-                0x0000023a       0x11 UIActions.o
- .progmem.data.__c.2455
-                0x0000024b        0xf UIActions.o
- .progmem.data.__c.2453
-                0x0000025a       0x11 UIActions.o
- .progmem.data.__c.2451
-                0x0000026b        0xf UIActions.o
- .progmem.data.__c.2449
-                0x0000027a       0x11 UIActions.o
- .progmem.data.__c.2447
-                0x0000028b        0xf UIActions.o
- .progmem.data.__c.2445
-                0x0000029a       0x11 UIActions.o
- .progmem.data.__c.2443
-                0x000002ab        0xf UIActions.o
- .progmem.data.__c.2441
-                0x000002ba       0x11 UIActions.o
- .progmem.data.__c.2439
-                0x000002cb        0xf UIActions.o
- .progmem.data.__c.2437
-                0x000002da       0x11 UIActions.o
- .progmem.data.__c.2435
-                0x000002eb        0xf UIActions.o
- .progmem.data.__c.2433
-                0x000002fa       0x11 UIActions.o
- .progmem.data.__c.2586
-                0x0000030b        0x3 UIControl.o
- .progmem.data.__c.2584
-                0x0000030e        0x3 UIControl.o
  .progmem.data.__c.2582
-                0x00000311       0x11 UIControl.o
+                0x00000104       0x11 UIActions.o
  .progmem.data.__c.2580
-                0x00000322       0x11 UIControl.o
+                0x00000115       0x11 UIActions.o
  .progmem.data.__c.2578
-                0x00000333       0x11 UIControl.o
+                0x00000126       0x11 UIActions.o
  .progmem.data.__c.2576
-                0x00000344       0x11 UIControl.o
- .progmem.data.__c.2571
-                0x00000355       0x11 UIControl.o
- .progmem.data.__c.2568
-                0x00000366       0x11 UIControl.o
- .progmem.data.__c.2566
-                0x00000377       0x11 UIControl.o
- .progmem.data.__c.2564
-                0x00000388       0x11 UIControl.o
- .progmem.data.__c.2562
-                0x00000399       0x11 UIControl.o
- .progmem.data.__c.2557
-                0x000003aa       0x11 UIControl.o
+                0x00000137       0x11 UIActions.o
+ .progmem.data.__c.2569
+                0x00000148       0x11 UIActions.o
+ .progmem.data.__c.2567
+                0x00000159       0x11 UIActions.o
+ .progmem.data.__c.2560
+                0x0000016a       0x11 UIActions.o
+ .progmem.data.__c.2558
+                0x0000017b       0x11 UIActions.o
+ .progmem.data.__c.2556
+                0x0000018c        0xd UIActions.o
  .progmem.data.__c.2554
-                0x000003bb       0x11 UIControl.o
+                0x00000199       0x11 UIActions.o
  .progmem.data.__c.2552
-                0x000003cc       0x11 UIControl.o
+                0x000001aa       0x11 UIActions.o
  .progmem.data.__c.2550
+                0x000001bb       0x11 UIActions.o
+ .progmem.data.__c.2542
+                0x000001cc        0x3 UIActions.o
+ .progmem.data.__c.2534
+                0x000001cf        0x3 UIActions.o
+ .progmem.data.__c.2526
+                0x000001d2        0x3 UIActions.o
+ .progmem.data.__c.2518
+                0x000001d5        0x3 UIActions.o
+ .progmem.data.__c.2500
+                0x000001d8       0x11 UIActions.o
+ .progmem.data.__c.2496
+                0x000001e9       0x11 UIActions.o
+ .progmem.data.__c.2490
+                0x000001fa       0x11 UIActions.o
+ .progmem.data.__c.2484
+                0x0000020b       0x11 UIActions.o
+ .progmem.data.__c.2482
+                0x0000021c       0x11 UIActions.o
+ .progmem.data.__c.2463
+                0x0000022d        0xf UIActions.o
+ .progmem.data.__c.2461
+                0x0000023c       0x11 UIActions.o
+ .progmem.data.__c.2459
+                0x0000024d        0xf UIActions.o
+ .progmem.data.__c.2457
+                0x0000025c       0x11 UIActions.o
+ .progmem.data.__c.2455
+                0x0000026d        0xf UIActions.o
+ .progmem.data.__c.2453
+                0x0000027c       0x11 UIActions.o
+ .progmem.data.__c.2451
+                0x0000028d        0xf UIActions.o
+ .progmem.data.__c.2449
+                0x0000029c       0x11 UIActions.o
+ .progmem.data.__c.2447
+                0x000002ad        0xf UIActions.o
+ .progmem.data.__c.2445
+                0x000002bc       0x11 UIActions.o
+ .progmem.data.__c.2443
+                0x000002cd        0xf UIActions.o
+ .progmem.data.__c.2441
+                0x000002dc       0x11 UIActions.o
+ .progmem.data.__c.2439
+                0x000002ed        0xf UIActions.o
+ .progmem.data.__c.2437
+                0x000002fc       0x11 UIActions.o
+ .progmem.data.__c.2435
+                0x0000030d        0xf UIActions.o
+ .progmem.data.__c.2433
+                0x0000031c       0x11 UIActions.o
+ .progmem.data.__c.2584
+                0x0000032d        0x3 UIControl.o
+ .progmem.data.__c.2582
+                0x00000330        0x3 UIControl.o
+ .progmem.data.__c.2580
+                0x00000333       0x11 UIControl.o
+ .progmem.data.__c.2578
+                0x00000344       0x11 UIControl.o
+ .progmem.data.__c.2576
+                0x00000355       0x11 UIControl.o
+ .progmem.data.__c.2574
+                0x00000366       0x11 UIControl.o
+ .progmem.data.__c.2569
+                0x00000377       0x11 UIControl.o
+ .progmem.data.__c.2566
+                0x00000388       0x11 UIControl.o
+ .progmem.data.__c.2564
+                0x00000399       0x11 UIControl.o
+ .progmem.data.__c.2562
+                0x000003aa       0x11 UIControl.o
+ .progmem.data.__c.2560
+                0x000003bb       0x11 UIControl.o
+ .progmem.data.__c.2555
+                0x000003cc       0x11 UIControl.o
+ .progmem.data.__c.2552
                 0x000003dd       0x11 UIControl.o
- .progmem.data.__c.2548
+ .progmem.data.__c.2550
                 0x000003ee       0x11 UIControl.o
- .progmem.data.__c.2546
+ .progmem.data.__c.2548
                 0x000003ff       0x11 UIControl.o
- .progmem.data.__c.2538
+ .progmem.data.__c.2546
                 0x00000410       0x11 UIControl.o
- .progmem.data.__c.2536
+ .progmem.data.__c.2544
                 0x00000421       0x11 UIControl.o
  .progmem.data.__c.2467
                 0x00000432       0x11 WeldCtrl.o
@@ -588,165 +586,165 @@ END GROUP
                 0x00000ef2      0x114 UIActions.o
                 0x00000ef2                uiAct_SetTrigType
  .text.uiAct_RestoreDefaults
-                0x00001006       0x70 UIActions.o
+                0x00001006       0x74 UIActions.o
                 0x00001006                uiAct_RestoreDefaults
  .text.uiAct_SetWeldType
-                0x00001076      0x15c UIActions.o
-                0x00001076                uiAct_SetWeldType
+                0x0000107a      0x15c UIActions.o
+                0x0000107a                uiAct_SetWeldType
  .text.uiHelper_LoadMenus
-                0x000011d2      0x528 UIActions.o
-                0x000011d2                uiHelper_LoadMenus
+                0x000011d6      0x528 UIActions.o
+                0x000011d6                uiHelper_LoadMenus
  .text.uiHelper_SetNumericParam
-                0x000016fa      0x2d0 UIActions.o
-                0x000016fa                uiHelper_SetNumericParam
+                0x000016fe      0x2d0 UIActions.o
+                0x000016fe                uiHelper_SetNumericParam
  .text.uiAct_SetP0Time
-                0x000019ca       0x4c UIActions.o
-                0x000019ca                uiAct_SetP0Time
+                0x000019ce       0x4c UIActions.o
+                0x000019ce                uiAct_SetP0Time
  .text.uiAct_SetP1Time
-                0x00001a16       0x4c UIActions.o
-                0x00001a16                uiAct_SetP1Time
+                0x00001a1a       0x4c UIActions.o
+                0x00001a1a                uiAct_SetP1Time
  .text.uiAct_SetIPTime
-                0x00001a62       0x4c UIActions.o
-                0x00001a62                uiAct_SetIPTime
+                0x00001a66       0x4c UIActions.o
+                0x00001a66                uiAct_SetIPTime
  .text.uiAct_SetTrigDlyTime
-                0x00001aae       0x4c UIActions.o
-                0x00001aae                uiAct_SetTrigDlyTime
+                0x00001ab2       0x4c UIActions.o
+                0x00001ab2                uiAct_SetTrigDlyTime
  .text.uiAct_SetTrigThrsh
-                0x00001afa       0xa0 UIActions.o
-                0x00001afa                uiAct_SetTrigThrsh
+                0x00001afe       0xa0 UIActions.o
+                0x00001afe                uiAct_SetTrigThrsh
  .text.uiHelper_DisplayNumeric
-                0x00001b9a       0xdc UIActions.o
-                0x00001b9a                uiHelper_DisplayNumeric
+                0x00001b9e       0xdc UIActions.o
+                0x00001b9e                uiHelper_DisplayNumeric
  .text.uiAct_ShowP0Time
-                0x00001c76       0x14 UIActions.o
-                0x00001c76                uiAct_ShowP0Time
+                0x00001c7a       0x14 UIActions.o
+                0x00001c7a                uiAct_ShowP0Time
  .text.uiAct_ShowP1Time
-                0x00001c8a       0x14 UIActions.o
-                0x00001c8a                uiAct_ShowP1Time
+                0x00001c8e       0x14 UIActions.o
+                0x00001c8e                uiAct_ShowP1Time
  .text.uiAct_ShowIPTime
-                0x00001c9e       0x14 UIActions.o
-                0x00001c9e                uiAct_ShowIPTime
+                0x00001ca2       0x14 UIActions.o
+                0x00001ca2                uiAct_ShowIPTime
  .text.uiAct_ShowTrigDlyTime
-                0x00001cb2       0x14 UIActions.o
-                0x00001cb2                uiAct_ShowTrigDlyTime
+                0x00001cb6       0x14 UIActions.o
+                0x00001cb6                uiAct_ShowTrigDlyTime
  .text.uiAct_ShowTrigThrsh
-                0x00001cc6       0x28 UIActions.o
-                0x00001cc6                uiAct_ShowTrigThrsh
+                0x00001cca       0x28 UIActions.o
+                0x00001cca                uiAct_ShowTrigThrsh
  .text.__vector_5
-                0x00001cee       0x4c UIControl.o
-                0x00001cee                __vector_5
+                0x00001cf2       0x4c UIControl.o
+                0x00001cf2                __vector_5
  .text.__vector_4
-                0x00001d3a       0x14 UIControl.o
-                0x00001d3a                __vector_4
+                0x00001d3e       0x14 UIControl.o
+                0x00001d3e                __vector_4
  .text.uiObj_Register
-                0x00001d4e       0x32 UIControl.o
-                0x00001d4e                uiObj_Register
+                0x00001d52       0x32 UIControl.o
+                0x00001d52                uiObj_Register
  .text.uiObj_GetObject
-                0x00001d80       0x20 UIControl.o
-                0x00001d80                uiObj_GetObject
+                0x00001d84       0x20 UIControl.o
+                0x00001d84                uiObj_GetObject
  .text.uiObj_Activate
-                0x00001da0       0x1a UIControl.o
-                0x00001da0                uiObj_Activate
+                0x00001da4       0x1a UIControl.o
+                0x00001da4                uiObj_Activate
  .text.uiObj_DrawPrev
-                0x00001dba       0x60 UIControl.o
-                0x00001dba                uiObj_DrawPrev
+                0x00001dbe       0x60 UIControl.o
+                0x00001dbe                uiObj_DrawPrev
  .text.uiObj_DrawNext
-                0x00001e1a       0x60 UIControl.o
-                0x00001e1a                uiObj_DrawNext
- .text.UI_Init  0x00001e7a       0x38 UIControl.o
-                0x00001e7a                UI_Init
+                0x00001e1e       0x60 UIControl.o
+                0x00001e1e                uiObj_DrawNext
+ .text.UI_Init  0x00001e7e       0x38 UIControl.o
+                0x00001e7e                UI_Init
  .text.UI_ResetActivity
-                0x00001eb2       0x1e UIControl.o
-                0x00001eb2                UI_ResetActivity
+                0x00001eb6       0x1e UIControl.o
+                0x00001eb6                UI_ResetActivity
  .text.UI_GetActivity
-                0x00001ed0        0x6 UIControl.o
-                0x00001ed0                UI_GetActivity
+                0x00001ed4        0x6 UIControl.o
+                0x00001ed4                UI_GetActivity
  .text.UI_ScreenSaver
-                0x00001ed6       0x98 UIControl.o
-                0x00001ed6                UI_ScreenSaver
+                0x00001eda       0x98 UIControl.o
+                0x00001eda                UI_ScreenSaver
  .text.UI_ProcessInput
-                0x00001f6e      0x164 UIControl.o
-                0x00001f6e                UI_ProcessInput
+                0x00001f72      0x164 UIControl.o
+                0x00001f72                UI_ProcessInput
  .text.UI_ResetInputState
-                0x000020d2       0x10 UIControl.o
-                0x000020d2                UI_ResetInputState
+                0x000020d6       0x10 UIControl.o
+                0x000020d6                UI_ResetInputState
  .text.UI_Status
-                0x000020e2      0x1a0 UIControl.o
-                0x000020e2                UI_Status
+                0x000020e6      0x198 UIControl.o
+                0x000020e6                UI_Status
  .text.UI_ForceUpdate
-                0x00002282        0x6 UIControl.o
-                0x00002282                UI_ForceUpdate
+                0x0000227e        0x6 UIControl.o
+                0x0000227e                UI_ForceUpdate
  .text.UI_Service
-                0x00002288      0x390 UIControl.o
-                0x00002288                UI_Service
+                0x00002284      0x398 UIControl.o
+                0x00002284                UI_Service
  .text.__vector_3
-                0x00002618       0x62 WeldCtrl.o
-                0x00002618                __vector_3
+                0x0000261c       0x62 WeldCtrl.o
+                0x0000261c                __vector_3
  .text.__vector_1
-                0x0000267a       0x72 WeldCtrl.o
-                0x0000267a                __vector_1
+                0x0000267e       0x72 WeldCtrl.o
+                0x0000267e                __vector_1
  .text.__vector_2
-                0x000026ec       0x6a WeldCtrl.o
-                0x000026ec                __vector_2
+                0x000026f0       0x6a WeldCtrl.o
+                0x000026f0                __vector_2
  .text.WaitZeroX
-                0x00002756       0x52 WeldCtrl.o
-                0x00002756                WaitZeroX
+                0x0000275a       0x52 WeldCtrl.o
+                0x0000275a                WaitZeroX
  .text.WELD_Init
-                0x000027a8       0x1a WeldCtrl.o
-                0x000027a8                WELD_Init
+                0x000027ac       0x1a WeldCtrl.o
+                0x000027ac                WELD_Init
  .text.DisableWeld
-                0x000027c2       0x1e WeldCtrl.o
-                0x000027c2                DisableWeld
+                0x000027c6       0x1e WeldCtrl.o
+                0x000027c6                DisableWeld
  .text.EnableWeld
-                0x000027e0       0xe4 WeldCtrl.o
-                0x000027e0                EnableWeld
+                0x000027e4       0xe4 WeldCtrl.o
+                0x000027e4                EnableWeld
  .text.WELD_Service
-                0x000028c4      0x478 WeldCtrl.o
-                0x000028c4                WELD_Service
+                0x000028c8      0x478 WeldCtrl.o
+                0x000028c8                WELD_Service
  .text.IsWeldTriggered
-                0x00002d3c        0x6 WeldCtrl.o
-                0x00002d3c                IsWeldTriggered
+                0x00002d40        0x6 WeldCtrl.o
+                0x00002d40                IsWeldTriggered
  .text.IsWeldEnabled
-                0x00002d42        0x6 WeldCtrl.o
-                0x00002d42                IsWeldEnabled
+                0x00002d46        0x6 WeldCtrl.o
+                0x00002d46                IsWeldEnabled
  .text.libgcc.div
-                0x00002d48       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_udivmodhi4.o)
-                0x00002d48                __udivmodhi4
+                0x00002d4c       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_udivmodhi4.o)
+                0x00002d4c                __udivmodhi4
  .text.libgcc.div
-                0x00002d70       0x44 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_udivmodsi4.o)
-                0x00002d70                __udivmodsi4
+                0x00002d74       0x44 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_udivmodsi4.o)
+                0x00002d74                __udivmodsi4
  .text.avr-libc
-                0x00002db4        0xe c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(memset.o)
-                0x00002db4                memset
+                0x00002db8        0xe c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x00002db8                memset
  .text.avr-libc
-                0x00002dc2       0x34 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
-                0x00002dc2                __utoa_ncheck
-                0x00002dc4                __utoa_common
+                0x00002dc6       0x34 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+                0x00002dc6                __utoa_ncheck
+                0x00002dc8                __utoa_common
  .text.avr-libc
-                0x00002df6       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega644.o)
-                0x00002df6                __eerd_byte_m644
+                0x00002dfa       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega644.o)
+                0x00002dfa                __eerd_byte_m644
  .text.avr-libc
-                0x00002e06        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega644.o)
-                0x00002e06                __eerd_word_m644
+                0x00002e0a        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega644.o)
+                0x00002e0a                __eerd_word_m644
  .text.avr-libc
-                0x00002e12       0x24 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega644.o)
-                0x00002e12                __eeupd_byte_m644
-                0x00002e14                __eeupd_r18_m644
+                0x00002e16       0x24 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega644.o)
+                0x00002e16                __eeupd_byte_m644
+                0x00002e18                __eeupd_r18_m644
  .text.avr-libc
-                0x00002e36        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega644.o)
-                0x00002e36                __eeupd_word_m644
+                0x00002e3a        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega644.o)
+                0x00002e3a                __eeupd_word_m644
  .text.avr-libc
-                0x00002e42       0x20 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
-                0x00002e42                strrev
+                0x00002e46       0x20 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00002e46                strrev
  .text.avr-libc
-                0x00002e62       0x20 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega644.o)
-                0x00002e62                __eerd_block_m644
-                0x00002e66                __eerd_blraw_m644
-                0x00002e82                . = ALIGN (0x2)
+                0x00002e66       0x20 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega644.o)
+                0x00002e66                __eerd_block_m644
+                0x00002e6a                __eerd_blraw_m644
+                0x00002e86                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002e82        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
-                0x00002e82                _exit
-                0x00002e82                exit
+ .fini9         0x00002e86        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+                0x00002e86                _exit
+                0x00002e86                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -765,11 +763,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002e82        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .fini0         0x00002e86        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002e86                _etext = .
+                0x00002e8a                _etext = .
 
-.data           0x00800100        0x8 load address 0x00002e86
+.data           0x00800100        0xc load address 0x00002e8a
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm644.o
@@ -793,174 +791,179 @@ END GROUP
  .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
  .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega644.o)
  *(.data*)
+ .data.FWVerMsg
+                0x00800100        0x2 SpotWelder.o
+                0x00800100                FWVerMsg
+ .data.FWName   0x00800102        0x2 SpotWelder.o
+                0x00800102                FWName
  .data.MenuIndex.2429
-                0x00800100        0x1 UIActions.o
- .data.LastMenu.2532
-                0x00800101        0x1 UIControl.o
- .data.OldUIObj.2531
-                0x00800102        0x1 UIControl.o
- .data.CurrentUIObj
-                0x00800103        0x1 UIControl.o
- .data.CurMenuIndex
-                0x00800104        0x1 UIControl.o
- .data.Activity
+                0x00800104        0x1 UIActions.o
+ .data.LastMenu.2534
                 0x00800105        0x1 UIControl.o
+ .data.OldUIObj.2533
+                0x00800106        0x1 UIControl.o
+ .data.CurrentUIObj
+                0x00800107        0x1 UIControl.o
+ .data.CurMenuIndex
+                0x00800108        0x1 UIControl.o
+ .data.Activity
+                0x00800109        0x1 UIControl.o
  .data.WeldTriggered
-                0x00800106        0x1 WeldCtrl.o
+                0x0080010a        0x1 WeldCtrl.o
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x00800108                . = ALIGN (0x2)
- *fill*         0x00800107        0x1 
-                0x00800108                _edata = .
-                0x00800108                PROVIDE (__data_end, .)
+                0x0080010c                . = ALIGN (0x2)
+ *fill*         0x0080010b        0x1 
+                0x0080010c                _edata = .
+                0x0080010c                PROVIDE (__data_end, .)
 
-.bss            0x00800108      0x25f
-                0x00800108                PROVIDE (__bss_start, .)
+.bss            0x0080010c      0x25f
+                0x0080010c                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.WeldOffSet.2450
-                0x00800108        0x2 Drivers/TimerControl.o
+                0x0080010c        0x2 Drivers/TimerControl.o
  .bss.EntryTime.2451
-                0x0080010a        0x2 Drivers/TimerControl.o
- .bss.BeepTime  0x0080010c        0x4 Drivers/TimerControl.o
+                0x0080010e        0x2 Drivers/TimerControl.o
+ .bss.BeepTime  0x00800110        0x4 Drivers/TimerControl.o
  .bss.BeepStart
-                0x00800110        0x4 Drivers/TimerControl.o
+                0x00800114        0x4 Drivers/TimerControl.o
  .bss.BeepActive
-                0x00800114        0x1 Drivers/TimerControl.o
+                0x00800118        0x1 Drivers/TimerControl.o
  .bss.SysTimerActive
-                0x00800115        0x1 Drivers/TimerControl.o
+                0x00800119        0x1 Drivers/TimerControl.o
  .bss.WeldTicks
-                0x00800116        0x2 Drivers/TimerControl.o
+                0x0080011a        0x2 Drivers/TimerControl.o
  .bss.ActiveWeldCycle
-                0x00800118        0x8 Drivers/TimerControl.o
+                0x0080011c        0x8 Drivers/TimerControl.o
  .bss.NextToggle
-                0x00800120        0x2 Drivers/TimerControl.o
+                0x00800124        0x2 Drivers/TimerControl.o
  .bss.SysWeldEnabler
-                0x00800122        0x1 Drivers/TimerControl.o
- .bss.SysTicks  0x00800123        0x4 Drivers/TimerControl.o
- .bss.i.2194    0x00800127        0x1 Drivers/VFDDrv.o
+                0x00800126        0x1 Drivers/TimerControl.o
+ .bss.SysTicks  0x00800127        0x4 Drivers/TimerControl.o
+ .bss.i.2194    0x0080012b        0x1 Drivers/VFDDrv.o
  .bss.DelayEach.2195
-                0x00800128        0x1 Drivers/VFDDrv.o
- .bss.i.2186    0x00800129        0x1 Drivers/VFDDrv.o
+                0x0080012c        0x1 Drivers/VFDDrv.o
+ .bss.i.2186    0x0080012d        0x1 Drivers/VFDDrv.o
  .bss.DelayEach.2187
-                0x0080012a        0x1 Drivers/VFDDrv.o
- .bss.HomeX     0x0080012b        0x2 Drivers/VFDDrv.o
- .bss.vfdMode   0x0080012d        0x1 Drivers/VFDDrv.o
- .bss.vfdStatus
                 0x0080012e        0x1 Drivers/VFDDrv.o
+ .bss.HomeX     0x0080012f        0x2 Drivers/VFDDrv.o
+ .bss.vfdMode   0x00800131        0x1 Drivers/VFDDrv.o
+ .bss.vfdStatus
+                0x00800132        0x1 Drivers/VFDDrv.o
  .bss.AREF_Calibrated
-                0x0080012f        0x2 SpotWelder.o
- .bss.low.2392  0x00800131        0x1 UIActions.o
+                0x00800133        0x2 SpotWelder.o
+ .bss.low.2392  0x00800135        0x1 UIActions.o
  .bss.high.2391
-                0x00800132        0x1 UIActions.o
- .bss.out.2390  0x00800133        0x2 UIActions.o
- .bss.pos.2509  0x00800135        0x1 UIActions.o
- .bss.start.2508
                 0x00800136        0x1 UIActions.o
- .bss.numLen.2507
-                0x00800137        0x1 UIActions.o
- .bss.pos.2479  0x00800138        0x1 UIActions.o
- .bss.start.2478
-                0x00800139        0x1 UIActions.o
- .bss.numLen.2477
+ .bss.out.2390  0x00800137        0x2 UIActions.o
+ .bss.pos.2509  0x00800139        0x1 UIActions.o
+ .bss.start.2508
                 0x0080013a        0x1 UIActions.o
- .bss.DoneEdit.2472
+ .bss.numLen.2507
                 0x0080013b        0x1 UIActions.o
+ .bss.pos.2479  0x0080013c        0x1 UIActions.o
+ .bss.start.2478
+                0x0080013d        0x1 UIActions.o
+ .bss.numLen.2477
+                0x0080013e        0x1 UIActions.o
+ .bss.DoneEdit.2472
+                0x0080013f        0x1 UIActions.o
  .bss.Change.2473
-                0x0080013c        0x1 UIActions.o
+                0x00800140        0x1 UIActions.o
  .bss.NewVal.2474
-                0x0080013d        0x2 UIActions.o
- .bss.CurVal.2475
-                0x0080013f        0x2 UIActions.o
- .bss.tempObjPtr.2430
                 0x00800141        0x2 UIActions.o
+ .bss.CurVal.2475
+                0x00800143        0x2 UIActions.o
+ .bss.tempObjPtr.2430
+                0x00800145        0x2 UIActions.o
  .bss.tempHandle.2432
-                0x00800143        0x1 UIActions.o
+                0x00800147        0x1 UIActions.o
  .bss.tempMenuObj.2431
-                0x00800144       0x16 UIActions.o
- .bss.Number    0x0080015a        0x9 UIActions.o
+                0x00800148       0x16 UIActions.o
+ .bss.Number    0x0080015e        0x9 UIActions.o
  .bss.DispValue
-                0x00800163       0x10 UIActions.o
+                0x00800167       0x10 UIActions.o
  .bss.MySwitchStatus
-                0x00800173        0xd UIActions.o
- .bss.TempVal   0x00800180        0x2 UIActions.o
- .bss.MenuIDs   0x00800182       0x10 UIActions.o
- .bss.LastWeldStage.2544
-                0x00800192        0x1 UIControl.o
- .bss.trigd.2545
-                0x00800193        0x1 UIControl.o
- .bss.CurWeldStage.2543
-                0x00800194        0x1 UIControl.o
- .bss.LastInput.2534
-                0x00800195        0x4 UIControl.o
- .bss.RunningObj.2533
-                0x00800199        0x2 UIControl.o
- .bss.UpdateHome.2535
-                0x0080019b        0x1 UIControl.o
- .bss.MenuIsDrawn.2530
-                0x0080019c        0x1 UIControl.o
- .bss.PressLength.2518
-                0x0080019d        0x4 UIControl.o
- .bss.CurTicks.2517
+                0x00800177        0xd UIActions.o
+ .bss.TempVal   0x00800184        0x2 UIActions.o
+ .bss.MenuIDs   0x00800186       0x10 UIActions.o
+ .bss.LastWeldStage.2542
+                0x00800196        0x1 UIControl.o
+ .bss.trigd.2543
+                0x00800197        0x1 UIControl.o
+ .bss.CurWeldStage.2541
+                0x00800198        0x1 UIControl.o
+ .bss.LastInput.2536
+                0x00800199        0x4 UIControl.o
+ .bss.RunningObj.2535
+                0x0080019d        0x2 UIControl.o
+ .bss.UpdateHome.2537
+                0x0080019f        0x1 UIControl.o
+ .bss.MenuIsDrawn.2532
+                0x008001a0        0x1 UIControl.o
+ .bss.PressLength.2520
                 0x008001a1        0x4 UIControl.o
- .bss.dir.2513  0x008001a5        0x2 UIControl.o
- .bss.xPos.2511
-                0x008001a7        0x1 UIControl.o
- .bss.NextUpdate.2512
-                0x008001a8        0x4 UIControl.o
- .bss.EnPins    0x008001ac        0x1 UIControl.o
+ .bss.CurTicks.2519
+                0x008001a5        0x4 UIControl.o
+ .bss.dir.2515  0x008001a9        0x2 UIControl.o
+ .bss.xPos.2513
+                0x008001ab        0x1 UIControl.o
+ .bss.NextUpdate.2514
+                0x008001ac        0x4 UIControl.o
+ .bss.EnPins    0x008001b0        0x1 UIControl.o
  .bss.EnCountRaw
-                0x008001ad        0x1 UIControl.o
- .bss.EnCount   0x008001ae        0x1 UIControl.o
- .bss.EnChange  0x008001af        0x1 UIControl.o
+                0x008001b1        0x1 UIControl.o
+ .bss.EnCount   0x008001b2        0x1 UIControl.o
+ .bss.EnChange  0x008001b3        0x1 UIControl.o
  .bss.InputStates
-                0x008001b0        0xd UIControl.o
- .bss.MenuList  0x008001bd      0x176 UIControl.o
+                0x008001b4        0xd UIControl.o
+ .bss.MenuList  0x008001c1      0x176 UIControl.o
  .bss.UI_Activity
-                0x00800333        0x4 UIControl.o
+                0x00800337        0x4 UIControl.o
  .bss.UI_encSense
-                0x00800337        0x1 UIControl.o
- .bss.low.2392  0x00800338        0x1 WeldCtrl.o
+                0x0080033b        0x1 UIControl.o
+ .bss.low.2392  0x0080033c        0x1 WeldCtrl.o
  .bss.high.2391
-                0x00800339        0x1 WeldCtrl.o
- .bss.out.2390  0x0080033a        0x2 WeldCtrl.o
+                0x0080033d        0x1 WeldCtrl.o
+ .bss.out.2390  0x0080033e        0x2 WeldCtrl.o
  .bss.ResetStarted.2454
-                0x0080033c        0x1 WeldCtrl.o
+                0x00800340        0x1 WeldCtrl.o
  .bss.NextWeld.2452
-                0x0080033d        0x4 WeldCtrl.o
- .bss.NextStepTime.2450
                 0x00800341        0x4 WeldCtrl.o
+ .bss.NextStepTime.2450
+                0x00800345        0x4 WeldCtrl.o
  .bss.TriggerStarted.2453
-                0x00800345        0x1 WeldCtrl.o
+                0x00800349        0x1 WeldCtrl.o
  .bss.EntryTime.2451
-                0x00800346        0x4 WeldCtrl.o
- .bss.ZeroX_LastDetectedTS
                 0x0080034a        0x4 WeldCtrl.o
+ .bss.ZeroX_LastDetectedTS
+                0x0080034e        0x4 WeldCtrl.o
  .bss.ZeroX_Polarity
-                0x0080034e        0x1 WeldCtrl.o
+                0x00800352        0x1 WeldCtrl.o
  .bss.ZeroX_Detected
-                0x0080034f        0x1 WeldCtrl.o
+                0x00800353        0x1 WeldCtrl.o
  .bss.ZeroXLost
-                0x00800350        0x1 WeldCtrl.o
+                0x00800354        0x1 WeldCtrl.o
  .bss.CurWeldCycle
-                0x00800351        0x8 WeldCtrl.o
+                0x00800355        0x8 WeldCtrl.o
  .bss.WeldEnabled
-                0x00800359        0x1 WeldCtrl.o
+                0x0080035d        0x1 WeldCtrl.o
  *(COMMON)
- COMMON         0x0080035a        0xd WeldCtrl.o
-                0x0080035a                ContactTrigLevel
-                0x0080035b                WeldSettings
-                0x00800367                PROVIDE (__bss_end, .)
-                0x00002e86                __data_load_start = LOADADDR (.data)
-                0x00002e8e                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080035e        0xd WeldCtrl.o
+                0x0080035e                ContactTrigLevel
+                0x0080035f                WeldSettings
+                0x0080036b                PROVIDE (__bss_end, .)
+                0x00002e8a                __data_load_start = LOADADDR (.data)
+                0x00002e96                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800367        0x0
-                0x00800367                PROVIDE (__noinit_start, .)
+.noinit         0x0080036b        0x0
+                0x0080036b                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800367                PROVIDE (__noinit_end, .)
-                0x00800367                _end = .
-                0x00800367                PROVIDE (__heap_start, .)
+                0x0080036b                PROVIDE (__noinit_end, .)
+                0x0080036b                _end = .
+                0x0080036b                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000       0x14
  *(.eeprom*)

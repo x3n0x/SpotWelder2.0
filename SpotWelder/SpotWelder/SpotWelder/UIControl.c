@@ -45,6 +45,10 @@ uint8_t		EEMEM ee_UIPREF_ENC_SENSE	= 1;			//Encoder Sensitivity
 //Reference to Weld Settings 
 extern weldctrl_s_t WeldSettings;
 
+//Reference to FW Version Messages
+extern char* FWName;
+extern char* FWVerMsg;
+
 //Internal Variables
 static uint8_t UI_encSense = 0;
 static uint32_t UI_Activity = 0;
@@ -121,31 +125,30 @@ int uiObj_SetAction(UIObjHandle Handle, uint8_t ActionID, int (*ActFunc)(void)){
 	if(((uint8_t)Handle < CurMenuIndex) && ((uint8_t)Handle != 255)){
 		switch(ActionID){
 			case 1:		//SW1 Action
-			MenuList[(uint8_t)Handle].Current.ActionFunc1 = ActFunc;
-			retVal = 1;
-			break;
+				MenuList[(uint8_t)Handle].Current.ActionFunc1 = ActFunc;
+				retVal = 1;
+				break;
 			case 2:		//SW2 Action
-			MenuList[(uint8_t)Handle].Current.ActionFunc2 = ActFunc;
-			retVal = 2;
-			break;
+				MenuList[(uint8_t)Handle].Current.ActionFunc2 = ActFunc;
+				retVal = 2;
+				break;
 			case 3:		//SW3 (Both) Action
-			MenuList[(uint8_t)Handle].Current.ActionFunc3 = ActFunc;
-			retVal = 3;
-			break;
+				MenuList[(uint8_t)Handle].Current.ActionFunc3 = ActFunc;
+				retVal = 3;
+				break;
 			case 4:		//SW1 HOLD Action
-			MenuList[(uint8_t)Handle].Current.ActionFunc4 = ActFunc;
-			retVal = 4;
-			break;
+				MenuList[(uint8_t)Handle].Current.ActionFunc4 = ActFunc;
+				retVal = 4;
+				break;
 			case 5:		//SW2 HOLD action
-			MenuList[(uint8_t)Handle].Current.ActionFunc5 = ActFunc;
-			retVal = 5;
-			break;
+				MenuList[(uint8_t)Handle].Current.ActionFunc5 = ActFunc;
+				retVal = 5;
+				break;
 			default:
-			MenuList[(uint8_t)Handle].Current.ActionFunc3 = ActFunc;
-			retVal = 3;
-			break;
+				MenuList[(uint8_t)Handle].Current.ActionFunc3 = ActFunc;
+				retVal = 3;
 		}
-		}else{
+	}else{
 		retVal = (-1);
 	}
 	
@@ -160,7 +163,7 @@ int uiObj_SetNext(UIObjHandle Handle, UIObjHandle NewNext){
 	if( ((uint8_t)Handle != 255) && ((uint8_t)Handle < CurMenuIndex) ){
 		MenuList[(uint8_t)Handle].Next = NewNext;
 		retVal = (int)Handle;
-		}else{
+	}else{
 		retVal = (-1);
 	}
 	
@@ -174,7 +177,7 @@ int uiObj_SetPrev(UIObjHandle Handle, UIObjHandle NewPrev){
 	if( ((uint8_t)Handle != 255) && ((uint8_t)Handle < CurMenuIndex) ){
 		MenuList[(uint8_t)Handle].Prev = NewPrev;
 		retVal = (int)Handle;
-		}else{
+	}else{
 		retVal = (-1);
 	}
 	
@@ -190,54 +193,54 @@ int uiObj_RunAction(UIObjHandle Handle, uint8_t ActionID){
 		
 		switch (ActionID){
 			case 1:
-			if(MenuList[(uint8_t)Handle].Current.ActionFunc1 != 0){
-				MenuList[(uint8_t)Handle].Current.ActionFunc1();
-				retVal = 1;
-				}else{
-				retVal = (-2);
-			}
-			break;
+				if(MenuList[(uint8_t)Handle].Current.ActionFunc1 != 0){
+					MenuList[(uint8_t)Handle].Current.ActionFunc1();
+					retVal = 1;
+					}else{
+					retVal = (-2);
+				}
+				break;
 			
 			case 2:
-			if(MenuList[(uint8_t)Handle].Current.ActionFunc2 != 0){
-				MenuList[(uint8_t)Handle].Current.ActionFunc2();
-				retVal = 2;
-				}else{
-				retVal = (-2);
-			}
-			break;
+				if(MenuList[(uint8_t)Handle].Current.ActionFunc2 != 0){
+					MenuList[(uint8_t)Handle].Current.ActionFunc2();
+					retVal = 2;
+					}else{
+					retVal = (-2);
+				}
+				break;
 			
 			case 3:
-			if(MenuList[(uint8_t)Handle].Current.ActionFunc3 != 0){
-				MenuList[(uint8_t)Handle].Current.ActionFunc3();
-				retVal = 3;
-				}else{
-				retVal = (-2);
-			}
-			break;
+				if(MenuList[(uint8_t)Handle].Current.ActionFunc3 != 0){
+					MenuList[(uint8_t)Handle].Current.ActionFunc3();
+					retVal = 3;
+					}else{
+					retVal = (-2);
+				}
+				break;
 			
 			case 4:
-			if(MenuList[(uint8_t)Handle].Current.ActionFunc4 != 0){
-				MenuList[(uint8_t)Handle].Current.ActionFunc4();
-				retVal = 4;
-				}else{
-				retVal = (-2);
-			}
-			break;
+				if(MenuList[(uint8_t)Handle].Current.ActionFunc4 != 0){
+					MenuList[(uint8_t)Handle].Current.ActionFunc4();
+					retVal = 4;
+					}else{
+					retVal = (-2);
+				}
+				break;
 			
 			case 5:
-			if(MenuList[(uint8_t)Handle].Current.ActionFunc5 != 0){
-				MenuList[(uint8_t)Handle].Current.ActionFunc5();
-				retVal = 3;
-				}else{
-				retVal = (-2);
-			}
-			break;
+				if(MenuList[(uint8_t)Handle].Current.ActionFunc5 != 0){
+					MenuList[(uint8_t)Handle].Current.ActionFunc5();
+					retVal = 3;
+					}else{
+					retVal = (-2);
+				}
+				break;
 			
 			default:
-			retVal = (-3);
+				retVal = (-3);
 		}
-		}else{
+	}else{
 		retVal = (-1);
 	}
 	
@@ -276,7 +279,7 @@ int uiObj_DrawPrev(UIObjHandle Handle){
 		}else{
 			retVal = (-2);
 		}
-		}else{
+	}else{
 		retVal = (-1);
 	}
 	
@@ -347,24 +350,26 @@ void UI_ScreenSaver(void){
 	static uint32_t NextUpdate;
 	static int dir;
 	
+	//Create a bouncing 'Larson Scanner' Effect on Display
+	
 	if(GetSysTicks() > NextUpdate){
-		
+		//Update Next Position
 		xPos += dir;
-		
+		//Clear Display
 		vfdClr();
-		
+		//Display Characters
+		//First Row
 		vfdGotoXY(xPos, 0);
-		vfdSendData(0xFF);
+		vfdSendData(0xFF);  //Illuminate all dots in char...
+		//Second Row 
 		vfdGotoXY((_vfdNumChars - 1)-xPos, 1);
 		vfdSendData(0xFF);
-		
+		//'Bounce' on ends
 		if(xPos == _vfdNumChars - 1) dir = -1;	
 		if(xPos == 0) dir = 1;
-		
+		//Set time for next Update 
 		NextUpdate = (_UI_SCRSAV_TIME_MS / _MS_PER_SYSTICK) + GetSysTicks();
-		
 	}
-		
 }
 
 //Process UI input from switches etc.
@@ -379,12 +384,12 @@ void UI_ProcessInput(swstatus_s_t * TargetSwStatus)
 	{
 		EnChange = 0;										//Reset Encoder pin change flag
 		
-		if((EnPins & _BV(_ENCA)) != 0)					//If Encoder, check to see if rising edge of A
+		if((EnPins & _BV(_ENCA)) != 0)						//If Encoder, check to see if rising edge of A
 		{
-			if((EnPins & _BV(_ENCB)) != 0)				//Is B high?
+			if((EnPins & _BV(_ENCB)) != 0)					//Is B high?
 				TargetSwStatus->encDirection = ENC_DIR_B;	//If so, we are going in direction B
 			else
-				TargetSwStatus->encDirection = ENC_DIR_A;  //Else, going in direction A
+				TargetSwStatus->encDirection = ENC_DIR_A;	//Else, going in direction A
 
 			TargetSwStatus->encCount = EnCount;
 			TargetSwStatus->encChange = SW_IsChange;		//Encoder Status has changed
@@ -624,8 +629,8 @@ void UI_Service(void){
 			if(!MenuIsDrawn){
 				if(Activity){
 					vfdClr();
-					vfdPrintStrXY(PSTR("-Micro Weld Pro-"), 16, 0, 0, _vfdTHISPage);
-					vfdPrintStrXY(PSTR("      v1.0      "), 16, 0, 1, _vfdTHISPage);
+					vfdPrintStrXY(FWName, 16, 0, 0, _vfdTHISPage);
+					vfdPrintStrXY(FWVerMsg, 16, 0, 1, _vfdTHISPage);
 				}
 				MenuIsDrawn = 1;
 				//Disable welding
@@ -711,7 +716,7 @@ void UI_Status(uint8_t Update){
 		//Single Pulse Weld
 		if(WeldSettings.Type == wTypeSinglePulse){
 			//Waiting	
-			if( (CurWeldStage == WeldStage_Wait) || (Update) ){
+			if( (CurWeldStage == WeldStage_Wait) ){
 				if(IsWeldEnabled()){
 					//Ready to run 
 					switch (trigd){
@@ -739,7 +744,7 @@ void UI_Status(uint8_t Update){
 		}
 		//Single Pulse Weld
 		if(WeldSettings.Type == wTypeDoublePulse){
-			if((CurWeldStage == WeldStage_Wait) || (Update) ){
+			if((CurWeldStage == WeldStage_Wait) ){
 				if(IsWeldEnabled()){
 					//Ready to run
 					switch (trigd){

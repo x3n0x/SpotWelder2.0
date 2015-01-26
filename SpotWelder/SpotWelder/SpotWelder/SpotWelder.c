@@ -37,9 +37,14 @@
 #include "SpotWelder.h"
 
 //Variables
-const char FWName[]		PROGMEM = "Micro-Weld Precision Welder System";
-const char FWVerMsg[]	PROGMEM = "fw 0.1 c2014";
-const char FWAuthor[]	PROGMEM = "Joe Niven";
+
+//FW and Version Messages (Must be 16 chars long!)
+const char FWNameStr[] PROGMEM		= "-Micro Weld Pro-";
+const char FWVerMsgStr[] PROGMEM	= "  fw 1.0 c2014  ";
+const char FWAuthorStr[] PROGMEM	= "   Joe Niven    ";
+
+PGM_P FWName = FWNameStr;
+PGM_P FWVerMsg = FWVerMsgStr;
 
 //Working variables 
 
@@ -59,7 +64,7 @@ uint16_t	EEMEM ee_WELD_VOLTAGE_MV = 3500;	//Weld Voltage in mV
 uint16_t	EEMEM ee_WELD_P0_LENGTH	 = 250;		//Weld Pulse 0 Length (mS)
 uint16_t	EEMEM ee_WELD_P1_LENGTH  = 300;		//Weld Pulse 1 Length (mS)
 uint16_t	EEMEM ee_WELD_IP_DELAY	 = 100;		//Inter-pulse Delay length (mS)
-uint16_t	EEMEM ee_WELD_TRIG_DELAY = 100; 	//Trigger Delay (mS)
+uint16_t	EEMEM ee_WELD_TRIG_DELAY = 1000; 	//Trigger Delay (mS)
 uint16_t	EEMEM ee_WELD_TRIGGER	 = 0;		//Weld Trigger Type (See SpotWelder.h for Trigger Type Enum)
 uint16_t	EEMEM ee_WELD_TYPE		 = 2;		//Weld Pulse Type
 
@@ -67,7 +72,7 @@ uint16_t	EEMEM ee_WELD_TYPE		 = 2;		//Weld Pulse Type
 uint16_t	EEMEM ee_AREF_CAL		;			//Calibrated AREF
 
 //DAC Setting (Trigger threshold)
-uint8_t		EEMEM ee_DAC_Setting	= 128;		//DAC Setting
+uint8_t		EEMEM ee_DAC_Setting	= 200;		//DAC Setting
 
 //Load settings from EEPROM to SRAM
 void LoadSettings(void){

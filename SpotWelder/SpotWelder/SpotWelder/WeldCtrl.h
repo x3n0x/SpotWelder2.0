@@ -42,10 +42,10 @@
 #define _WeldDef_P0						250
 #define _WeldDef_P1						300
 #define _WeldDef_IP						100
-#define _WeldDef_TrigDel				100
+#define _WeldDef_TrigDel				1000
 #define _WeldDef_Trig					0
 #define _WeldDef_Type					0
-#define _WeldDef_TrigThrs				128
+#define _WeldDef_TrigThrs				200
 
 //Min/Max Weld parameters
 #define _MINWeldPulseDelay_mS			50
